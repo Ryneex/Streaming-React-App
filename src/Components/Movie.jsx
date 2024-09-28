@@ -72,7 +72,7 @@ document.title = "StreamFlix | Movies";
         next={getMovies}
         hasMore={hasMore}
       >
-        <Cards data={movies}></Cards>
+        <Cards data={movies} title="movie" ></Cards>
       </InfiniteScroll>
     </div>
   ) : (

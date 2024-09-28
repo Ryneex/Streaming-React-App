@@ -1,12 +1,16 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-  
-const Cards = ({ data }) => {
-    console.log(data)
+import React from "react";
+import { Link } from "react-router-dom";
+
+const Cards = ({ data, title }) => {
+  console.log(title);
   return (
     <div className="flex flex-wrap items-center justify-between w-[98%] px-[5%] h-full bg-[#1F1E24] ">
       {data.map((c, i) => (
-        <Link className="w-[35vh] h-[50vh]  mb-8 relative " key={i}>
+        <Link
+          to={`/${data.media_type || title}/details/${c.id}`}
+          className="w-[35vh] h-[50vh]  mb-8 relative "
+          key={i}
+        >
           <img
             className="h-[40vh] object-cover shadow-[8px_17px_38px_2px_rgba(0,0,0,.9)] rounded-lg"
             src={`https://image.tmdb.org/t/p/original/${
@@ -27,6 +31,6 @@ const Cards = ({ data }) => {
       ))}
     </div>
   );
-}
+};
 
-export default Cards
+export default Cards;
