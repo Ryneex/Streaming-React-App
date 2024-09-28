@@ -7,7 +7,7 @@ const Cards = ({ data, title }) => {
     <div className="flex flex-wrap items-center justify-between w-[98%] px-[5%] h-full bg-[#1F1E24] ">
       {data.map((c, i) => (
         <Link
-          to={`/${data.media_type || title}/details/${c.id}`}
+          to={`/${c.media_type || title}/details/${c.id}`}
           className="w-[35vh] h-[50vh]  mb-8 relative "
           key={i}
         >

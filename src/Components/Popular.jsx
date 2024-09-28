@@ -77,7 +77,7 @@ document.title = "StreamFlix | Popular";
         next={getPopular}
         hasMore={hasMore}
       >
-        <Cards data={popular}></Cards>
+        <Cards data={popular} title={category}></Cards>
       </InfiniteScroll>
     </div>
   ) : (
