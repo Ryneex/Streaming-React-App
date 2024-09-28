@@ -22,7 +22,7 @@ const TopNav = () => {
          getSearches()
      },[queries])
   return (
-    <div className="w-full h-[7vh]  relative flex justify-start items-center mx-[15%] ">
+    <div className="w-full h-[7vh]  relative flex justify-start items-center mx-[15%] z-[9999] ">
       <i className=" text-zinc-400 text-2xl ri-search-line"></i>
       <input
         onChange={(e) => {
