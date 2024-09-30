@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import streamimg from "../assets/Live-Streaming-Platform.webp";
 
 const About = () => {
   const navigate = useNavigate();
@@ -10,7 +11,7 @@ const About = () => {
         {/* Hero Image */}
         <div className="md:w-1/2 mb-8 md:mb-0">
           <img
-            src="https://imgs.search.brave.com/rEiIDchFUKHRakaax9jwhjp7Nj2qBfi7ABpejj7TV1c/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly93d3cu/ZGFjYXN0LmNvbS93/cC1jb250ZW50L3Vw/bG9hZHMvMjAyMS8x/Mi9MaXZlLVN0cmVh/bWluZy1QbGF0Zm9y/bS5qcGc"
+            src={streamimg}
             alt="Streaming Service"
             className="rounded-lg shadow-lg w-full h-auto"
           />
