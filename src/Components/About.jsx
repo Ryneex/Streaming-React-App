@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import streamimg from "../assets/Live-Streaming-Platform.webp";
+import download from "../assets/download.png";
 
 const About = () => {
   const navigate = useNavigate();
@@ -11,9 +11,9 @@ const About = () => {
         {/* Hero Image */}
         <div className="md:w-1/2 mb-8 md:mb-0">
           <img
-            src={streamimg}
+            src={download}
             alt="Streaming Service"
-            className="rounded-lg shadow-lg w-full h-auto"
+            className="rounded-lg shadow-lg w-full  h-auto"
           />
         </div>
 
