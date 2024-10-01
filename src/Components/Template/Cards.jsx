@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import no_img from "../../assets/no_img.png"
 const Cards = ({ data, title }) => {
   console.log(title);
   return (
@@ -13,9 +13,14 @@ const Cards = ({ data, title }) => {
         >
           <img
             className="h-[40vh] object-cover shadow-[8px_17px_38px_2px_rgba(0,0,0,.9)] rounded-lg"
-            src={`https://image.tmdb.org/t/p/original/${
-              c.poster_path || c.backdrop_path || c.profile_path
-            }`}
+            src={
+              c.poster_path ||
+              c.backdrop_path ||
+              c.profile_path ? `https://image.tmdb.org/t/p/original/${
+                c.poster_path || c.backdrop_path || c.profile_path
+              }`
+                :no_img
+            }
             alt=""
           />
           <h1 className="text-xl text-zinc-400 mt-3 w-[80%] font-semibold ">

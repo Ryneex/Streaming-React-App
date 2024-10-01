@@ -8,6 +8,7 @@ import HorigontalCards from "./Template/HorigontalCards";
 import DropDown from "../Components/Template/DropDown";
 import LoadingSpinner from "./LoadingSpinner";
 
+
 const Home = () => {
   const [wallpaper, setWallpaper] = useState(null);
   const [trending, setTrending] = useState([]);
