@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import no_img from "../../assets/no_img.png"
 const Cards = ({ data, title }) => {
-  console.log(title);
+  
   return (
     <div className="flex flex-wrap items-center justify-between w-[98%] px-[5%] h-full bg-[#1F1E24] ">
       {data.map((c, i) => (

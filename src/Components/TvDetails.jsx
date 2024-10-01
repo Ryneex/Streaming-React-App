@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 import LoadingSpinner from "../Components/LoadingSpinner";
 import HorigontalCard from "./Template/HorigontalCards";
+import no_img from "../assets/no_img.png"
 const TvDetails = () => {
   const { pathname } = useLocation();
 
@@ -158,11 +159,11 @@ const TvDetails = () => {
       <div className="w-full h-[40vh] flex  overflow-y-hidden mb-5 p-5 ">
         {info.detail.seasons.length > 0 ? (
           info.detail.seasons.map((s, i) => (
-            <div className="w-[25vh] mr-[2%]">
-              <img
+            <div key={i} className="w-[25vh] mr-[2%]">
+              <img 
                 className="h-[30vh] object-cover shadow-[8px_17px_38px_2px_rgba(0,0,0,.9)] 
               rounded-lg"
-                src={`https://image.tmdb.org/t/p/original/${s.poster_path}`}
+                src={s.poster_path ? `https://image.tmdb.org/t/p/original/${s.poster_path}`:no_img}
                 alt=""
               />
               <h1 className="text-xl text-zinc-400 mt-3 w-[80%] font-semibold text-center">

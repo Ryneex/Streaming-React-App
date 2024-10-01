@@ -58,19 +58,19 @@ const PersonDetail = () => {
               target="_blank"
               href={`https://www.facebook.com/${info.externalid.facebook_id}`}
             >
-              <i class="ri-facebook-circle-fill"></i>
+              <i className="ri-facebook-circle-fill"></i>
             </a>
             <a
               target="_blank"
               href={`https://www.instagram.com/${info.externalid.instagram_id}`}
             >
-              <i class="ri-instagram-fill"></i>
+              <i className="ri-instagram-fill"></i>
             </a>
             <a
               target="_blank"
               href={`https://www.twitter.com/${info.externalid.twitter_id}`}
             >
-              <i class="ri-twitter-x-fill"></i>
+              <i className="ri-twitter-x-fill"></i>
             </a>
           </div>
           <h1 className="text-2xl text-zinc-400 font-semibold my-5">
