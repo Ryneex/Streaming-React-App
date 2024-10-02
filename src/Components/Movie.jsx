@@ -8,75 +8,76 @@ import LoadingSpinner from "../Components/LoadingSpinner";
 import InfiniteScroll from "react-infinite-scroll-component";
 
 const Movie = () => {
- const [movies, setMovies] = useState([]);
- const [category, setCategory] = useState("now_playing");
- const [page, setPage] = useState(1);
- const [hasMore, setHasMore] = useState(true);
- const navigate = useNavigate();
+  const [movies, setMovies] = useState([]);
+  const [category, setCategory] = useState("now_playing");
+  const [page, setPage] = useState(1);
+  const [hasMore, setHasMore] = useState(true);
+  const navigate = useNavigate();
 
-const getMovies = async () => {
-  try {
-    const { data } = await axios.get(`/movie/${category}?page=${page}`);
-    if (data.results.length > 0) {
-      setMovies((prevState) => [...prevState, ...data.results]);
-      setPage(page + 1);
-    } else {
-      setHasMore(false);
+  const getMovies = async () => {
+    try {
+      const { data } = await axios.get(`/movie/${category}?page=${page}`);
+      if (data.results.length > 0) {
+        setMovies((prevState) => [...prevState, ...data.results]);
+        setPage((prevPage) => prevPage + 1);
+      } else {
+        setHasMore(false);
+      }
+    } catch (error) {
+      console.error("Error fetching movies:", error);
     }
-  } catch (error) {
-    console.log(error);
-  }
-};
-const refreshHandler = () => {
-  if (movies.length === 0) {
-    getMovies();
-  } else {
+  };
+
+  const refreshHandler = () => {
     setPage(1);
     setMovies([]);
     getMovies();
-  }
-};
+  };
 
-useEffect(() => {
-  refreshHandler();
-}, [category]);
+  useEffect(() => {
+    refreshHandler();
+  }, [category]);
 
-document.title = "StreamFlix | Movies";
+  useEffect(() => {
+    document.title = "StreamFlix | Movies";
+  }, []);
 
-
-
-  return movies.length > 0 ? (
-    <div className=" w-screen h-screen bg-[#1F1E24] overflow-x-hidden  ">
-      <div className="w-full  flex items-center p-10">
-        <h1 className="text-2xl text-zinc-400 font-semibold ">
+  return (
+    <div className="w-screen h-screen bg-[#1F1E24] overflow-x-hidden">
+      <div className="w-full flex flex-col md:flex-row items-center justify-between p-10">
+        <h1 className="text-2xl text-zinc-400 font-semibold flex items-center">
           <i
-            onClick={() => {
-              navigate(-1);
-            }}
-            className="text-[#6556Cd] ri-arrow-left-line"
+            onClick={() => navigate(-1)}
+            className="text-[#6556Cd] ri-arrow-left-line cursor-pointer mr-2"
           ></i>
-          Movie<small className="text-zinc-600 text-base ml-2">({category})</small>
+          Movie
+          <small className="text-zinc-600 text-base ml-2">({category})</small>
         </h1>
-        <TopNav></TopNav>
-        <DropDown
-          title="Category"
-          options={["popular", "top_rated", "upcoming", "now_playing"]}
-          func={(e) => {
-            setCategory(e.target.value);
-          }}
-        ></DropDown>
+        <div className="md:flex justify-between items-center gap-10 mt-4 md:mt-0 ml-5 ">
+          <TopNav />
+          <DropDown
+            title="Category"
+            options={["popular", "top_rated", "upcoming", "now_playing"]}
+            func={(e) => setCategory(e.target.value)}
+          />
+        </div>
       </div>
       <InfiniteScroll
-        loader={<LoadingSpinner></LoadingSpinner>}
+        loader={<LoadingSpinner />}
         dataLength={movies.length}
         next={getMovies}
         hasMore={hasMore}
+        endMessage={
+          <p className="text-white text-center">No more movies to show.</p>
+        }
       >
-        <Cards data={movies} title="movie" ></Cards>
+        {movies.length > 0 ? (
+          <Cards data={movies} title="movie" />
+        ) : (
+          <LoadingSpinner />
+        )}
       </InfiniteScroll>
     </div>
-  ) : (
-    <LoadingSpinner></LoadingSpinner>
   );
 };
 

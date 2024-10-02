@@ -13,7 +13,7 @@ const About = () => {
           <img
             src={download}
             alt="Streaming Service"
-            className="rounded-lg shadow-lg w-full  h-auto"
+            className="rounded-lg shadow-lg w-full h-auto object-cover"
           />
         </div>
 
@@ -28,7 +28,7 @@ const About = () => {
             We bring you the best entertainment right to your screen with
             seamless streaming and personalized recommendations.
           </p>
-          <ul className="space-y-4 text-lg text-white">
+          <ul className="space-y-4 text-lg text-white list-disc list-inside">
             <li>🎬 Unlimited Movies and Shows</li>
             <li>💻 HD and 4K Streaming Available</li>
             <li>🔍 Personalized Recommendations</li>
@@ -37,7 +37,7 @@ const About = () => {
           </ul>
           <button
             onClick={() => navigate(-1)} // Navigate to the previous page
-            className="mt-5 ml-10  bg-[#6556cd] text-white px-4 py-2 rounded hover:bg-violet-800 transition duration-200"
+            className="mt-5 bg-[#6556cd] text-white px-4 py-2 rounded hover:bg-violet-800 transition duration-200"
           >
             Go Back
           </button>

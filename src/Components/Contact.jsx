@@ -2,8 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const Contact = () => {
-
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   return (
     <section className="bg-[#1F1E24]  flex items-center justify-center min-w-screen mx-auto">
       <div className=" w-full max-w-lg   shadow-lg rounded-lg">
@@ -14,8 +13,13 @@ const Contact = () => {
             the details below. We’re here to help!
           </p>
         </div>
-        <button onClick={() => { navigate(-1) }} className="mb-4 w-full bg-[#6556cd]
-         text-white px-4 py-2 rounded hover:bg-violet-800 transition duration-200">
+        <button
+          onClick={() => {
+            navigate(-1);
+          }}
+          className="mb-4 w-full bg-[#6556cd]
+         text-white px-4 py-2 rounded hover:bg-violet-800 transition duration-200"
+        >
           Go Back
         </button>
         <div className="max-w-lg mx-auto bg-white p-8 shadow-lg rounded-lg text-center">

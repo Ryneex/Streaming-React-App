@@ -47,7 +47,7 @@ const Tvshows = () => {
 
    return tv.length > 0 ? (
      <div className=" w-screen h-screen bg-[#1F1E24] overflow-x-hidden  ">
-       <div className="w-full  flex items-center p-10">
+       <div className="w-full  md:flex items-center p-5 mb:-p-10">
          <h1 className="text-2xl text-zinc-400 font-semibold ">
            <i
              onClick={() => {
@@ -55,17 +55,19 @@ const Tvshows = () => {
              }}
              className="text-[#6556Cd] ri-arrow-left-line"
            ></i>
-           Tv 
+           Tv
            <small className="text-zinc-600 text-base ml-2">({category})</small>
          </h1>
-         <TopNav></TopNav>
-         <DropDown
-           title="Category"
-           options={["popular", "top_rated", "on_the_air", "airing_today"]}
-           func={(e) => {
-             setCategory(e.target.value);
-           }}
-         ></DropDown>
+         <div className="md:flex md:gap-[10%] md:ml-[20%] ">
+           <TopNav></TopNav>
+           <DropDown
+             title="Category"
+             options={["popular", "top_rated", "on_the_air", "airing_today"]}
+             func={(e) => {
+               setCategory(e.target.value);
+             }}
+           ></DropDown>
+         </div>
        </div>
        <InfiniteScroll
          loader={<LoadingSpinner></LoadingSpinner>}

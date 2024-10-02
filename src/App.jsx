@@ -16,35 +16,27 @@ import NotFound from "./Components/NotFound";
 
 const App = () => {
   return (
-    <div className="w-screen h-screen bg-[#1F1E24]  flex">
-      <Routes>
-        <Route path="/" element={<Home></Home>}></Route>
-        <Route path="/trending" element={<Trending></Trending>}></Route>
-        <Route path="/popular" element={<Popular></Popular>}></Route>
-        <Route path="/movies" element={<Movie></Movie>}></Route>
-        <Route path="/movie/details/:id" element={<MovieDetail></MovieDetail>}>
-          <Route
-            path="/movie/details/:id/trailer"
-            element={<Trailer></Trailer>}
-          ></Route>
-        </Route>
-
-        <Route path="/tvshows" element={<Tvshows />}></Route>
-        <Route path="/tv/details/:id" element={<TvDetails></TvDetails>}>
-          <Route
-            path="/tv/details/:id/trailer"
-            element={<Trailer></Trailer>}
-          ></Route>
-        </Route>
-        <Route path="/person" element={<People />}></Route>
-        <Route
-          path="/person/details/:id"
-          element={<PersonDetail></PersonDetail>}
-        ></Route>
-        <Route path="/about" element={<About></About>}></Route>
-        <Route path="/contact" element={<Contact>`</Contact>}></Route>
-        <Route path="*" element={<NotFound></NotFound>}></Route>
-      </Routes>
+    <div className="min-h-screen bg-[#1F1E24] flex flex-col">
+      <div className="flex-grow">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/trending" element={<Trending />} />
+          <Route path="/popular" element={<Popular />} />
+          <Route path="/movies" element={<Movie />} />
+          <Route path="/movie/details/:id" element={<MovieDetail />}>
+            <Route path="/movie/details/:id/trailer" element={<Trailer />} />
+          </Route>
+          <Route path="/tvshows" element={<Tvshows />} />
+          <Route path="/tv/details/:id" element={<TvDetails />}>
+            <Route path="/tv/details/:id/trailer" element={<Trailer />} />
+          </Route>
+          <Route path="/person" element={<People />} />
+          <Route path="/person/details/:id" element={<PersonDetail />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </div>
     </div>
   );
 };
