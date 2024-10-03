@@ -53,7 +53,7 @@ const Movie = () => {
           Movie
           <small className="text-zinc-600 text-base ml-2">({category})</small>
         </h1>
-        <div className="md:flex justify-between items-center gap-10 mt-4 md:mt-0 ml-5 ">
+        <div className="md:flex gap-10 mt-4 md:mt-2 ml-5 ">
           <TopNav />
           <DropDown
             title="Category"

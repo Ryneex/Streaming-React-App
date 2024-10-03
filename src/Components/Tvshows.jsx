@@ -20,7 +20,7 @@ const Tvshows = () => {
          if (data.results.length > 0) {
            setTv((prevState) => [...prevState, ...data.results]);
            setPage(page + 1);
-         } else {
+``         } else {
            setHasMore(false);
          }
        } catch (error) {

@@ -4,11 +4,11 @@ import no_img from "../../assets/no_img.png";
 
 const Cards = ({ data, title }) => {
   return (
-    <div className="flex flex-wrap items-center justify-center md:justify-between w-full px-2">
+    <div className="flex flex-wrap  items-center justify-center md:justify-between w-full px-2">
       {data.map((c, i) => (
         <Link
           to={`/${c.media_type || title}/details/${c.id}`}
-          className="w-full sm:w-[45%] md:w-[30%] lg:w-[22%] xl:w-[18%] mb-4 md:mb-8 relative p-2" // Adjusted widths for responsiveness
+          className="w-full md:max-h-[45vh]  sm:w-[45%] md:w-[30%] lg:w-[22%] xl:w-[18%] mb-4 md:mb-[4%] relative p-2" // Adjusted widths for responsiveness
           key={i}
         >
           <img
