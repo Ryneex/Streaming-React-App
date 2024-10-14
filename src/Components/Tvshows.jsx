@@ -46,7 +46,7 @@ const Tvshows = () => {
 
 
    return tv.length > 0 ? (
-     <div className=" w-screen h-screen bg-[#1F1E24] overflow-x-hidden  ">
+     <div id="scroller" className=" w-screen h-screen bg-[#1F1E24] overflow-x-hidden  ">
        <div className="w-full  md:flex items-center p-5 mb:-p-10">
          <h1 className="text-2xl text-zinc-400 font-semibold ">
            <i
@@ -74,6 +74,7 @@ const Tvshows = () => {
          dataLength={tv.length}
          next={getTv}
          hasMore={hasMore}
+         scrollableTarget="scroller"
        >
          <Cards data={tv} title="tv"></Cards>
        </InfiniteScroll>
